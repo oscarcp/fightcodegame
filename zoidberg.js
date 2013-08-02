@@ -1,5 +1,5 @@
-# Oscar Carballal Prego <oscar@oscarcp.com>
-# License: WTFPL
+// Oscar Carballal Prego <oscar@oscarcp.com>
+// License: WTFPL
 
 function Robot(robot) {
     robot.rotateCannon(90);
@@ -24,7 +24,7 @@ Robot.prototype.onIdle = function(ev) {
 Robot.prototype.onScannedRobot = function(ev) {
     var robot = ev.robot;
     var scanned = ev.scannedRobot.id;
-    if (scanned != ev.robot.parentId) {
+    if (scanned != robot.parentId) {
         robot.fire();
         robot.rotateCannon(25);
     }
