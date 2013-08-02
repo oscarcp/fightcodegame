@@ -27,7 +27,7 @@ Robot.prototype.onScannedRobot = function(ev) {
     var robot = ev.robot;
     var scanned = ev.scannedRobot;
     // NEED TO PROPERLY SOLVE THIS! THEY'RE SHOOTING EACH OTHER
-    if (scannedRobot.parentId == null || !scanneRobot.parentId == robot.id) {
+    if (scanned.parentId == null || !scanned.parentId == robot.id) {
         robot.fire();
         robot.rotateCannon(30);
     }
