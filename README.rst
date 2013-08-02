@@ -15,7 +15,7 @@ Zoidberg
 
 **Hit chance:** *~30% including enemy runaway situations*
 
-**Winning chance:** *~85% for bots in ranking <#2500*
+**Winning chance:** *~95% for bots in ranking <#2500*
 
 **SLOC:** *28 w/o comments*
 
