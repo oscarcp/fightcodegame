@@ -1,6 +1,5 @@
 // Oscar Carballal Prego <oscar@oscarcp.com>
 // License: WTFPL
-// TODO: Fix tanks collision stuck
 
 function Robot(zoidberg) {
     // At the start, we turn our turret 90deg (facing to then exterior)
@@ -38,11 +37,3 @@ Robot.prototype.onScannedRobot = function(ev) {
         zoidberg.rotateCannon(30);
     }
 };
-        
-
-//Robot.prototype.onHitByBullet = function(ev) {  
-//    var robot = ev.robot;         
-//    robot.fire(); 
-//      robot.rotateCannon(ev.bearing); 
-//    robot.fire();
-//};
