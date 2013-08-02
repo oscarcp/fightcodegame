@@ -1,5 +1,7 @@
 // Oscar Carballal Prego <oscar@oscarcp.com>
 // License: WTFPL
+// TODO: Fix attacking clones
+//       Fix tanks collision stuck
 
 function Robot(robot) {
     robot.rotateCannon(90);
@@ -23,9 +25,17 @@ Robot.prototype.onIdle = function(ev) {
 
 Robot.prototype.onScannedRobot = function(ev) {
     var robot = ev.robot;
-    var scanned = ev.scannedRobot.id;
-    if (scanned != robot.parentId) {
+    var scanned = ev.scannedRobot;
+    // NEED TO PROPERLY SOLVE THIS! THEY'RE SHOOTING EACH OTHER
+    if (scannedRobot.parentId == null || !scanneRobot.parentId == robot.id) {
         robot.fire();
-        robot.rotateCannon(25);
+        robot.rotateCannon(30);
     }
 };
+
+//Robot.prototype.onHitByBullet = function(ev) {
+//    var robot = ev.robot;
+//    robot.fire();
+//      robot.rotateCannon(ev.bearing);
+//    robot.fire();
+//};
