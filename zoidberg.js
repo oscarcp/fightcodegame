@@ -1,41 +1,48 @@
 // Oscar Carballal Prego <oscar@oscarcp.com>
 // License: WTFPL
-// TODO: Fix attacking clones
-//       Fix tanks collision stuck
+// TODO: Fix tanks collision stuck
 
-function Robot(robot) {
-    robot.rotateCannon(90);
+function Robot(zoidberg) {
+    // At the start, we turn our turret 90deg (facing to then exterior)
+    zoidberg.rotateCannon(90);
 }
-
+// Count the turns the tank does
 var turns = 0;
 
 Robot.prototype.onIdle = function(ev) {
-    var robot = ev.robot;
-    robot.ahead(10);
-    robot.turn(-45);
+    // We move in circles, with our turret facing out
+    var zoidberg = ev.robot;
+    zoidberg.ahead(10);
+    zoidberg.turn(-45);
     turns += 1;
+    // Evert N turns we run away to avoid beinghit
     if (turns == 3) {
-        robot.ahead(150);
+        zoidberg.ahead(150);
+        // Reset turns counter
         turns = 0;
     }
-    if (robot.life < 50) {
-        robot.clone();
+    // If we are below 50% life, we summon a clone to help us
+    if (zoidberg.life < 50) {
+        zoidberg.clone();
     }
 };
 
 Robot.prototype.onScannedRobot = function(ev) {
-    var robot = ev.robot;
-    var scanned = ev.scannedRobot;
-    // NEED TO PROPERLY SOLVE THIS! THEY'RE SHOOTING EACH OTHER
-    if (scanned.parentId == null || !scanned.parentId == robot.id) {
-        robot.fire();
-        robot.rotateCannon(30);
+    var zoidberg = ev.robot;
+    var enemyTank = ev.scannedRobot;
+    if (enemyTank.id !== zoidberg.parentId && enemyTank.parentId !== zoidberg.id) {
+        // Let's destroy!
+        zoidberg.fire();
+        // Statisticly speaking, this should give you ~30% hit chance when your enemy
+        // runs away. If you put a slightly higher number maybe you get more chances
+        zoidberg.rotateCannon(30);
     }
 };
+        
 
-//Robot.prototype.onHitByBullet = function(ev) {
-//    var robot = ev.robot;
-//    robot.fire();
-//      robot.rotateCannon(ev.bearing);
+//Robot.prototype.onHitByBullet = function(ev) {  
+//    var robot = ev.robot;         
+//    robot.fire(); 
+//      robot.rotateCannon(ev.bearing); 
 //    robot.fire();
 //};
