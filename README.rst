@@ -19,6 +19,9 @@ Zoidberg
 
 **SLOC:** *28 w/o comments*
 
+**Flaws:** *Recurrent loose agains WallRobots. This is due to the fact that rotateCannon(30) is not enough if the enemy
+walks straight for a long distance. Changing it for 35 or 40 should solve it, but it has impact on close encounters.*
+
 
 Very basic bot based on statistic prediction of movement. Since the speed of the tanks in the game is always the same
 and the turret turn degrees are "predictable" in most cases, we can stablish a rough statistic of what moves to do and
