@@ -10,12 +10,16 @@ License: WTFPL
 
 Zoidberg
 --------
+
 **Status:** *Stable, considered finished*
+
 
 Very basic bot based on statictic prediction of movement. It get around a 30% hit chance and near a 90% win chance for bots under ranking #2500 
 
 
 SID MKII
 --------
+
 **Status:** *Pre-alpha, on development*
+
 Named after the organic nanotech syntethic android is a more advanced bot that provides a very basic sentinence around it.
