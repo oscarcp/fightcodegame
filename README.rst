@@ -17,8 +17,6 @@ Zoidberg
 
 **Winning chance:** *~85% for bots in ranking <#2500*
 
-**Ranking:** *#1142 on 2013/08/02*
-
 **SLOC:** *28 w/o comments*
 
 
