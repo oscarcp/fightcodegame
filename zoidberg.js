@@ -37,6 +37,6 @@ Robot.prototype.onScannedRobot = function(ev) {
         zoidberg.rotateCannon(30);
         // Duplicate our chances of hitting the enemy bot if he didn't run away. It
         // makes our bot miss more, but also hit more if the momentum is good.
-        zoiberg.fire();
+        zoidberg.fire();
     }
 };
